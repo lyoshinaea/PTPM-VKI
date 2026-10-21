@@ -58,6 +58,7 @@ class TestDelivery(unittest.TestCase):
     def test_express_delivery_minimum_one_day(self):
         result = calculate_delivery_cost(1, 100, "обычный", is_express=True)
         self.assertEqual(result[1], "2026-09-04")
+
 # для расстояния 501 км понадобится два дня, а не один
     def test_delivery_distance_above_five_hundred(self):
         result = calculate_delivery_cost(1, 501, "обычный")
