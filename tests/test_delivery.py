@@ -2,9 +2,7 @@ import unittest
 
 from src.Delivery import calculate_delivery_cost
 
-
 class TestDelivery(unittest.TestCase):
-
 
 # при правильных данных стоимость и дата доставки рассчитываются верно
     def test_delivery_with_valid_data(self):
@@ -53,11 +51,11 @@ class TestDelivery(unittest.TestCase):
         express = calculate_delivery_cost(1, 100, "обычный", is_express=True)
         self.assertGreater(express[0], regular[0])
 
-
 # даже при экспресс доставке посылка идет минимум один день
     def test_express_delivery_minimum_one_day(self):
         result = calculate_delivery_cost(1, 100, "обычный", is_express=True)
         self.assertEqual(result[1], "2026-09-04")
+
 # для расстояния 501 км понадобится два дня, а не один
     def test_delivery_distance_above_five_hundred(self):
         result = calculate_delivery_cost(1, 501, "обычный")
