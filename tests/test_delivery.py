@@ -60,3 +60,7 @@ class TestDelivery(unittest.TestCase):
     def test_delivery_distance_above_five_hundred(self):
         result = calculate_delivery_cost(1, 501, "обычный")
         self.assertEqual(result[1], "2026-09-05")
+
+    def test_delivery(self):
+        result = calculate_delivery_cost(100, 600, "опасный", is_express=True)
+        self.assertEqual(result, (-1, "0000-00-00"))
