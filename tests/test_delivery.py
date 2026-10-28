@@ -2,9 +2,7 @@ import unittest
 
 from src.Delivery import calculate_delivery_cost
 
-
 class TestDelivery(unittest.TestCase):
-
 
 # при правильных данных стоимость и дата доставки рассчитываются верно
     def test_delivery_with_valid_data(self):
@@ -52,7 +50,6 @@ class TestDelivery(unittest.TestCase):
         regular = calculate_delivery_cost(1, 100, "обычный")
         express = calculate_delivery_cost(1, 100, "обычный", is_express=True)
         self.assertGreater(express[0], regular[0])
-
 
 # даже при экспресс доставке посылка идет минимум один день
     def test_express_delivery_minimum_one_day(self):
